@@ -1,11 +1,18 @@
 import { databaseManager } from '@/db';
 const prisma = databaseManager.getInstance();
 
-export const searchWakas = async (filter: string, page: number) => {
+export const searchWakas = async (
+  filter: string,
+  author: string,
+  page: number
+) => {
   const data = await prisma.waka.findMany({
     where: {
       bodyKanji: {
         contains: filter,
+      },
+      nameKanji: {
+        contains: author,
       },
     },
     take: 10,
@@ -16,6 +23,9 @@ export const searchWakas = async (filter: string, page: number) => {
     where: {
       bodyKanji: {
         contains: filter,
+      },
+      nameKanji: {
+        contains: author,
       },
     },
   });

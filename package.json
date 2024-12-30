@@ -4,7 +4,6 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node src/server.ts",
-    "migrate": "prisma migrate deploy && yarn start",
     "dev": "ts-node -r tsconfig-paths/register --files src/server.ts"
   },
   "dependencies": {
