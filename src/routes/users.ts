@@ -1,5 +1,5 @@
 import express from 'express';
-import { createUser, getUsers } from '@/models/user';
+import { createUser, getUsers } from '../models/user';
 import { body, validationResult } from 'express-validator';
 
 export const usersRouter = express.Router();

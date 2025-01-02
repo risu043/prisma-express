@@ -1,7 +1,8 @@
 import { app } from './app';
+import 'module-alias/register';
 
 const runServer = (): void => {
-  const port = process.env.PORT || 8080;
+  const port = process.env.PORT || 3000;
 
   const server = app.listen(port, () => {
     console.log(`listening on http://localhost:${port}`);

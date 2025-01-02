@@ -1,4 +1,4 @@
-import { databaseManager } from '@/db';
+import { databaseManager } from '../db';
 const prisma = databaseManager.getInstance();
 
 export const searchWakas = async (

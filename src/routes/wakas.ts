@@ -1,6 +1,6 @@
 import express from 'express';
-import { getRandomWakas, searchWakas } from '@/models/waka';
-import { DEFAULT_AUTHOR, DEFAULT_FILTER, DEFAULT_PAGE } from '@/constants';
+import { getRandomWakas, searchWakas } from '../models/waka';
+import { DEFAULT_AUTHOR, DEFAULT_FILTER, DEFAULT_PAGE } from '../constants';
 
 export const wakasRouter = express.Router();
 

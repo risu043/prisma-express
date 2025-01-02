@@ -1,20 +1,23 @@
-FROM node:20 as builder
-WORKDIR /build
+# FROM node:20
 
-COPY . /build
-RUN npm clean-install
-RUN npm run build
-RUN npx prisma generate
+# WORKDIR /app
 
-FROM node:20-slim
+# COPY . .
+# RUN npm install
+
+# EXPOSE 3000
+
+# CMD ["npm", "run", "migrate"]
+
+FROM node:20
 
 WORKDIR /app
 
-COPY --from=builder /build/dist /app/dist/
-COPY --from=builder /build/prisma/schema.prisma /app/prisma/schema.prisma
-COPY --from=builder /build/node_modules/.prisma/ /app/node_modules/.prisma/
-COPY --from=builder /build/node_modules/@prisma/ /app/node_modules/@prisma/
+COPY . .
+RUN npm install
+
+RUN npx prisma generate
 
 EXPOSE 3000
 
-CMD ["node", "dist/index.js"]
+CMD ["npm", "start"]
