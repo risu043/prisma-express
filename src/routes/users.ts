@@ -19,6 +19,7 @@ usersRouter.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    await createUser(req.body.name, req.body.score);
+    const data = await createUser(req.body.name, req.body.score);
+    return res.status(201).json(data);
   }
 );
