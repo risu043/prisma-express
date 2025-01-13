@@ -14,8 +14,12 @@ usersRouter.get('/', async (req: any, res: any) => {
 
 usersRouter.post(
   '/',
-  body('name').notEmpty().withMessage('Name is required'),
-  body('score').notEmpty().withMessage('Score is required'),
+  body('name')
+    .notEmpty()
+    .withMessage('名前を入力してください')
+    .isLength({ max: 6 })
+    .withMessage('名前は5文字以内で入力してください'),
+  body('score').notEmpty().withMessage('スコアを入力してください'),
   async (req: any, res: any) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
