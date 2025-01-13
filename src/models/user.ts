@@ -10,7 +10,7 @@ export const getUsers = async (page: number) => {
     skip: (page - 1) * 20,
   });
 
-  let currentRank = 1;
+  let currentRank = 1 + (page - 1) * 20;
   let previousScore: number | null = null;
 
   const usersWithRank = users.map((user, index) => {
