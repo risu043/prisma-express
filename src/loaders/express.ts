@@ -40,7 +40,7 @@ const loadSecureHeaders = (app: Express): void => {
 const loadCors = (app: Express): void => {
   app.use(
     cors({
-      origin: 'https://your-vercel-app-url.vercel.app', // VercelアプリのURLを指定
+      origin: 'https://waka-app.vercel.app/',
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
       credentials: true,
     })
