@@ -4,8 +4,9 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "ts-node src/server.ts",
-    "migrate": "ts-node src/migrate.ts",
+    "start": "node src/server.ts",
+    "migrate": "prisma migrate deploy",
+    "seed": "prisma db seed",
     "dev": "ts-node -r tsconfig-paths/register --files src/server.ts"
   },
   "dependencies": {
@@ -13,6 +14,7 @@
     "express": "4.21.2",
     "express-async-errors": "^3.1.1",
     "express-validator": "^7.2.1",
+    "helmet": "^8.0.0",
     "module-alias": "^2.2.3"
   },
   "devDependencies": {

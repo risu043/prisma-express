@@ -15,7 +15,7 @@ export const getUsers = async (page: number) => {
 
   const usersWithRank = users.map((user, index) => {
     if (user.score !== previousScore) {
-      currentRank = index + 1;
+      currentRank = 1 + (page - 1) * 20 + index;
     }
 
     previousScore = user.score;
