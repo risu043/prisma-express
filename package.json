@@ -4,13 +4,13 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "node src/server.ts",
+    "start": "node dist/src/server.ts",
     "migrate": "prisma migrate deploy",
     "seed": "prisma db seed",
-    "dev": "ts-node -r tsconfig-paths/register --files src/server.ts"
+    "dev": "ts-node -r tsconfig-paths/register src/server.ts"
   },
   "dependencies": {
-    "@prisma/client": "5.22.0",
+    "@prisma/client": "^5.22.0",
     "express": "4.21.2",
     "express-async-errors": "^3.1.1",
     "express-validator": "^7.2.1",
