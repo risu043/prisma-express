@@ -2,11 +2,13 @@ import express, { Express } from 'express';
 import { wakasRouter } from '../routes/wakas';
 import { usersRouter } from '../routes/users';
 import helmet from 'helmet';
+import cors from 'cors';
 
 export const loadMiddlewaresForWakaApp = (app: Express): void => {
   loadBodyParser(app);
   loadRouter(app);
   loadSecureHeaders(app);
+  loadCors(app);
 };
 
 const loadBodyParser = (app: Express): void => {
@@ -33,4 +35,14 @@ const loadSecureHeaders = (app: Express): void => {
       })
     );
   }
+};
+
+const loadCors = (app: Express): void => {
+  app.use(
+    cors({
+      origin: 'https://your-vercel-app-url.vercel.app', // VercelアプリのURLを指定
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+      credentials: true,
+    })
+  );
 };
