@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "tsconfig-paths-webpack-plugin && tsc",
     "start": "node dist/src/server.js",
     "migrate": "prisma migrate deploy",
     "seed": "prisma db seed",
