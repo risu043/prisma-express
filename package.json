@@ -16,7 +16,8 @@
     "express-async-errors": "^3.1.1",
     "express-validator": "^7.2.1",
     "helmet": "^8.0.0",
-    "module-alias": "^2.2.3"
+    "module-alias": "^2.2.3",
+    "tsconfig-paths-webpack-plugin": "^4.2.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
@@ -25,7 +26,6 @@
     "prisma": "5.22.0",
     "ts-node": "10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "tsconfig-paths-webpack-plugin": "^4.2.0",
     "typescript": "5.7.2"
   },
   "prisma": {
